@@ -7,6 +7,7 @@ import { VerificationTokenModule } from './verification-token/verification-token
 import { ConversationModule } from './converstion/conversation.module';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { MailerAsyncOptions } from '@nestjs-modules/mailer/dist/interfaces/mailer-async-options.interface';
+import {MessageModule} from "./message/message.module";
 
 @Module({
   imports: [
@@ -48,6 +49,7 @@ import { MailerAsyncOptions } from '@nestjs-modules/mailer/dist/interfaces/maile
     AuthModule,
     VerificationTokenModule,
     ConversationModule,
+    MessageModule,
   ],
 })
 export class AppModule {}

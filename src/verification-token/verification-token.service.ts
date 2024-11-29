@@ -67,7 +67,6 @@ export class VerificationTokenService {
 
     const verificationToken = generateString(70);
 
-    console.log(verificationToken)
     await this.tokenRepository.insert({
       email: email,
       expiresAt: new Date().getTime() + TimeToMS.hour,

@@ -12,8 +12,8 @@ import { MessageService } from './message.service';
 import { CreateMessageDto } from './dto/create-message.dto';
 import { AuthGuard } from '../auth/guards/auth-guard.service';
 import { Request } from 'express';
-import {ApiBearerAuth, ApiParam, ApiQuery} from '@nestjs/swagger';
-import {UpdateMessageDto} from "./dto/update-message.dto";
+import { ApiBearerAuth, ApiParam } from '@nestjs/swagger';
+import { UpdateMessageDto } from './dto/update-message.dto';
 
 @UseGuards(AuthGuard)
 @ApiBearerAuth()
