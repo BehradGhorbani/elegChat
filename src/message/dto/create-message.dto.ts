@@ -11,8 +11,6 @@ export class CreateMessageDto {
   @IsString()
   text: string;
 
-  @ApiProperty()
-  @IsString()
   senderName: string;
 
   user: User;

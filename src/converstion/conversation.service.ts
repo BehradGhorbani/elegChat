@@ -30,11 +30,9 @@ export class ConversationService {
   }
 
   async updateConversation(param: UpdateConversationDto): Promise<boolean> {
-    const { conversationId } = param;
-    delete param.conversationId;
 
     const result = await this.conversationRepository.update(
-      { id: conversationId, ownerId: param.ownerId },
+      { id: param.id, ownerId: param.ownerId },
       param,
     );
 

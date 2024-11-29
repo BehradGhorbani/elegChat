@@ -35,14 +35,20 @@ export class MessageService {
 
     param.text = param.text.trim();
     param.senderName = param.user.email.split('@')[0];
-    return this.messageRepository.save(param);
+    return this.messageRepository.save({
+      ...param,
+      userId: param.user.id,
+    });
   }
 
   async updateMessage(param: UpdateMessageDto): Promise<boolean> {
     param.text = param.text.trim();
-    const result = await this.messageRepository.update(param.id, {
-      text: param.text,
-    });
+    const result = await this.messageRepository.update(
+      { id: param.id },
+      {
+        text: param.text,
+      },
+    );
 
     const isAffected = !!result.affected;
 

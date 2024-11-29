@@ -5,5 +5,5 @@ import { IsString } from 'class-validator';
 export class UpdateConversationDto extends PartialType(CreateConversationDto) {
   @ApiProperty()
   @IsString()
-  public conversationId: string;
+  public id: string;
 }
